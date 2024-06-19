@@ -1,3 +1,5 @@
+
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -22,21 +24,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 		},
+
 		actions: {
+			
 			createContactList: async () => {
-				let actions = getActions();
-					const response = await fetch(
-						"https://playground.4geeks.com/contact/agendas/nestorfrones",{ 
-					method: "POST",
-				});
-				actions.getContacts();
+				const actions = getActions();
+				await fetch(
+					"https://playground.4geeks.com/contact/agendas/jaume153", { 
+						method: "POST",
+					}
+				);
+				actions.getContacts(); 
 			},
 
 			getContacts: async () => {
-				let actions = getActions();
-				try {
+				const actions = getActions();				
 					const response = await fetch(
-						"https://playground.4geeks.com/contact/agendas/nestorfrones"
+						"https://playground.4geeks.com/contact/agendas/jaume153"
 					);
 					if (!response.ok) {
 				actions.createContactList();
@@ -45,14 +49,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({
 						Contacts: data.contacts,
 					})
-				} catch (error) {
-					console.log(error);
-				}
+				
 			},
 
 			postContact: async (inputName, inputPhone, inputEmail, inputAddress) => {
-				let actions = getActions();
-				const response = await fetch("https://playground.4geeks.com/contact/agendas/nestorfrones/contacts", {
+				const actions = getActions();
+				const response = await fetch("https://playground.4geeks.com/contact/agendas/jaume153/contacts", {
 					method: "POST",
 					body: JSON.stringify({
 						name: inputName,
@@ -87,10 +89,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 			putContact: async (inputName, inputPhone, inputEmail, inputAddress) => {
-				let actions = getActions();
-				let store = getStore();
+				const actions = getActions();
+				const store = getStore();
 				
-				const response = await fetch('https://playground.4geeks.com/contact/agendas/nestorfrones/contacts/' + `${store.contact2.id}`, {
+				const response = await fetch('https://playground.4geeks.com/contact/agendas/jaume153/contacts/' + `${store.contact2.id}`, {
 					method: "PUT",
 					body: JSON.stringify({
 						name: inputName,
@@ -111,8 +113,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			deleteContact: async (id) => {
-				let actions = getActions();
-				const response = await fetch('https://playground.4geeks.com/contact/agendas/nestorfrones/contacts/' + `${id}`, {
+				const actions = getActions();
+				const response = await fetch('https://playground.4geeks.com/contact/agendas/jaume153/contacts/' + `${id}`, {
 					method: "DELETE",
 				})
 				if (!response.ok) {

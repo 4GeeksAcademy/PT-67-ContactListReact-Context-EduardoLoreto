@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 
 export const Footer = () => (
 	<footer className="footer mt-auto py-3 text-center">
 		<p>
-			Created By Eduardo Loreto.
+			Hecho con <i className="fa fa-heart text-danger" /> Eduardo Loreto{" "}
+			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
 		</p>
 	</footer>
 );

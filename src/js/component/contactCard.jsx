@@ -24,19 +24,19 @@ export const Contact = () => {
 	}
 
 
-	let urlImage1 = "https://picsum.photos/id/"
-	let urlImage2 = "/200/200"
+	//const urlImage1 = "https://picsum.photos/id/"
+	//const urlImage2 = "/200/200"
 
 
 	return (
 
 		<div>
-			{store.Contacts.length === 0 && <span className="m-5 p-5">No hay contactos agregados</span>}
+			{store.Contacts.length === 0 && <span className="m-5 p-5 text-danger">No existe ningún contacto</span>}
 			{store.Contacts.map((contact) => {
 				return (
 					<div key={contact.id} className="row border rounded m-2">
 						<div className="col-3 col-lg-2 p-2 mx-4 my-auto">
-							<img src={urlImage1 + contact.id + urlImage2} className="card-img rounded-circle" alt="..." />
+							<img src= "https://soymotero.net/wp-content/uploads/2020/09/ec_300_front_ri_my2021_0.jpg" className="card-img rounded-circle" alt="..." />
 						</div>
 						<div className="col p-2 my-auto">
 							<div className="row d-flex">
@@ -68,20 +68,20 @@ export const Contact = () => {
 				)
 			})}
 
-			{/* <!-- Modal --> */}
+			
 			<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h1 className="modal-title fs-5" id="exampleModalLabel">Are you sure?</h1>
+							<h1 className="modal-title fs-5" id="exampleModalLabel">Estas segur@?</h1>
 							<button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div className="modal-body">
-							If you delete this thing the entire uneverse will go down!
+							Si eliminas no se podra recuperar!!!
 						</div>
 						<div className="modal-footer">
-							<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Oh no!</button>
-							<button onClick={() => confirmDelete()} type="button" className="btn btn-primary" data-bs-dismiss="modal">Yes Baby!</button>
+							<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Mejor no</button>
+							<button onClick={() => confirmDelete()} type="button" className="btn btn-primary" data-bs-dismiss="modal">Eliminar de todos modos!</button>
 						</div>
 					</div>
 				</div>
