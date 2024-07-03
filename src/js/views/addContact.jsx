@@ -18,7 +18,7 @@ export const AddContact = () => {
 	}
 
 	return (
-		<form className="container" onSubmit={handleSubmit}>
+		<form className="container-fluid" onSubmit={handleSubmit}>
 			<h1 className="mt-5 mx-auto p-3 text-center text-success text-decoration-underline">Añadir Contacto</h1>
 			<div className="mb-3">
 				<label className="form-label text-primary">Nombre Completo</label>

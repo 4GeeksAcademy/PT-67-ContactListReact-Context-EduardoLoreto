@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhoneAlt, faLocationDot, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -23,11 +22,6 @@ export const Contact = () => {
 		actions.setIdForUpdate(id, name, address, phone, email)
 	}
 
-
-	//const urlImage1 = "https://picsum.photos/id/"
-	//const urlImage2 = "/200/200"
-
-
 	return (
 
 		<div>
@@ -36,39 +30,39 @@ export const Contact = () => {
 				return (
 					<div key={contact.id} className="row border rounded m-2">
 						<div className="col-3 col-lg-2 p-2 mx-4 my-auto">
-							<img src= "https://soymotero.net/wp-content/uploads/2020/09/ec_300_front_ri_my2021_0.jpg" className="card-img rounded-circle" alt="..." />
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8-7zKqxeqUgJ0SfeQ9jxZzFzU_6nTObmYQ&s" className="card-img rounded-circle" alt="..." />
 						</div>
 						<div className="col p-2 my-auto">
 							<div className="row d-flex">
 								<div className="col-12 py-3">
-									<h5 className="pt-2">{contact.name}</h5>
+									<h2 className="pt-2">{contact.name}</h2>
 								</div>
 								<div className="col text-secondary">
 									<div className="d-flex align-items-center">
-										<FontAwesomeIcon className="pe-2" icon={faLocationDot} /><p className="pt-3">{contact.address}</p>
+										<i class="fa-solid fa-phone"></i> {contact.phone}
 									</div>
 									<div className="d-flex align-items-center">
-										<FontAwesomeIcon className="pe-2" icon={faPhoneAlt} /><p className="pt-3">{contact.phone}</p>
+										<i class="fa-solid fa-address-book"></i> {contact.address}
 									</div>
 									<div className="d-flex align-items-center">
-										<FontAwesomeIcon className="pe-2" icon={faEnvelope} /><p className="pt-3">{contact.email}</p>
+										<i class="fa-solid fa-envelope"></i> {contact.email}
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="col-2 p-2 ms-auto me-2 d-flex d-inline">
+						<div className="container-fluid d-flex justify-content-end mb-2 mt-2">
 							<div className="d-flex align-items-start mt-3">
-								<Link to="/updateContact"><button onClick={() => idUpdateContact(contact.id, contact.name, contact.address, contact.phone, contact.email)} className="btn"><FontAwesomeIcon className="px-2" icon={faPencil} /></button></Link>
+								<Link to="/updateContact"><button onClick={() => idUpdateContact(contact.id, contact.name, contact.address, contact.phone, contact.email)} className="btn"></button><i class="fa-solid fa-pen-to-square"></i> </Link>
 							</div>
 							<div className="d-flex align-items-start mt-3">
-								<button onClick={() => deleteOneContact(contact.id)} className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" ><FontAwesomeIcon className="px-2" icon={faTrash} /></button>
+								<button onClick={() => deleteOneContact(contact.id)} className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-trash"></i></button>
 							</div>
 						</div>
 					</div>
 				)
 			})}
 
-			
+
 			<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div className="modal-dialog">
 					<div className="modal-content">
@@ -81,7 +75,7 @@ export const Contact = () => {
 						</div>
 						<div className="modal-footer">
 							<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Mejor no</button>
-							<button onClick={() => confirmDelete()} type="button" className="btn btn-primary" data-bs-dismiss="modal">Eliminar de todos modos!</button>
+							<button onClick={() => confirmDelete()} type="button" className="btn btn-warning" data-bs-dismiss="modal">Eliminar de todos modos!</button>
 						</div>
 					</div>
 				</div>

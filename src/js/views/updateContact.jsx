@@ -23,7 +23,7 @@ export const UpdateContact = () => {
     }
 
     return (
-        <form className="container" onSubmit={handleSubmit}>
+        <form className="container-fluid" onSubmit={handleSubmit}>
             <h1 className="mt-5 mx-auto p-3 text-center">Editar contacto</h1>
             <div className="mb-3">
                 <label className="form-label">Nombre completo</label>
@@ -42,7 +42,7 @@ export const UpdateContact = () => {
                 <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" className="form-control" id="address" aria-describedby="address" placeholder="Direccion Completa" />
             </div>
             <div className="mb-3">
-                <button className="btn btn-primary w-100" type="submit">Save</button>
+                <button className="btn btn-warning w-100" type="submit">Save</button>
             </div>
             <Link to="/">Lista de Contactos</Link>
         </form>
