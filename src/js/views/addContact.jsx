@@ -19,7 +19,8 @@ export const AddContact = () => {
 
 	return (
 		<form className="container-fluid" onSubmit={handleSubmit}>
-			<h1 className="mt-5 mx-auto p-3 text-center text-success text-decoration-underline">Añadir Contacto</h1>
+			<h1 className="mt-5 mx-auto p-3 text-center text-warning
+			 text-decoration-underline">Añadir Contacto</h1>
 			<div className="mb-3">
 				<label className="form-label text-primary">Nombre Completo</label>
 				<input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form-control" id="fullName" aria-describedby="Full Name" placeholder="Introduce aqui tu nombre" />
@@ -37,7 +38,7 @@ export const AddContact = () => {
 				<input value={address} onChange={(e) => setAddress(e.target.value)} type="text" className="form-control" id="address" aria-describedby="address" placeholder="Introduce aqui tu direccion completa" />
 			</div>
 			<div className="mb-3">
-				<button className="btn btn-success w-100" type="submit">Guardar</button>
+				<button className="btn btn-warning w-100" type="submit">Guardar</button>
 			</div>
 			<Link to="/">Volver a la lista de contactos</Link>
 		</form>
