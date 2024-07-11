@@ -1,27 +1,22 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
 export const UpdateContact = () => {
     const { store, actions } = useContext(Context);
-
     const [name, setName] = useState(store.contact2.name);
     const [phone, setPhone] = useState(store.contact2.phone);
     const [email, setEmail] = useState(store.contact2.email);
     const [address, setAddress] = useState(store.contact2.address);
-
     useEffect(() => {
         setName(store.contact2.name);
         setPhone(store.contact2.phone);
         setEmail(store.contact2.email);
         setAddress(store.contact2.address);
     }, [store.contact2]);
-
     function handleSubmit(e) {
         e.preventDefault();
         actions.putContact(name, phone, email, address);
     }
-
     return (
         <form className="container-fluid" onSubmit={handleSubmit}>
             <h1 className="mt-5 mx-auto p-3 text-center">Editar contacto</h1>
